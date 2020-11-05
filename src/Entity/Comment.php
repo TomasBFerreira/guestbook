@@ -48,7 +48,7 @@ class Comment
      */
     private $photoFilename;
 
-    public function _toString(): string
+    public function __toString(): string
     {
         return (string) $this->getEmail();
     }
