@@ -2,8 +2,10 @@
 version: '3'
 services:
     database:
-        image: mysql:8.0.17
+        image: mysql:5.7
         environment:
+            MYSQL_USER: main
             MYSQL_ROOT_PASSWORD: main
             MYSQL_DATABASE: main
-        ports: [5432]
+            MYSQL_PASSWORD: main
+        ports: [3306]
