@@ -9,3 +9,7 @@ services:
             MYSQL_DATABASE: main
             MYSQL_PASSWORD: main
         ports: [3306]
+        
+    redis:
+        image: redis:5-alpine
+        ports: [6379]
