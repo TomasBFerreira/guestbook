@@ -32,7 +32,7 @@ class CommentRepository extends ServiceEntityRepository
             ->setMaxResults(self::PAGINATOR_PER_PAGE)
             ->setFirstResult($offset)
             ->getQuery()
-    ;
+        ;
             
  return new Paginator($query);
     }
