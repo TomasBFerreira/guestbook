@@ -23,7 +23,8 @@ class FakerFixtures extends Fixture
             for($i = 0; $i < $r; $i++){
                 $comment = new Comment();
                 $comment->setConference($conference)->setAuthor($faker->name)->setEmail($faker->email)
-                        ->setText($faker->realText($maxNbChars = 200, $indexSize = 2));
+                        ->setText($faker->realText($maxNbChars = 200, $indexSize = 2))
+                        ->setState('published');
                 $manager->persist($comment);
             }
             

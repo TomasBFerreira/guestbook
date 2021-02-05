@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ConferenceControllerTest extends WebTestCase
 {
+
     public function testIndex()
     {
         $client = static::createClient();
@@ -14,7 +15,7 @@ class ConferenceControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h2', 'Give your feedback');
     }
-    
+
     public function testConferencePage()
     {
         $client = static::createClient();
@@ -27,6 +28,7 @@ class ConferenceControllerTest extends WebTestCase
         $this->assertPageTitleContains('Lisbon');
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h2', 'Lisbon 2020');
-        $this->assertSelectorExists('div:contains("There are 3 comments")');
+        $this->assertSelectorExists('div:contains("There are 10 comments")');
     }
+
 }
