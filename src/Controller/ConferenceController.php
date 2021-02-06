@@ -6,7 +6,6 @@ use App\Entity\Comment;
 use App\Entity\Conference;
 use App\Form\CommentFormType;
 use App\Repository\CommentRepository;
-use App\SpamChecker;
 use App\Message\CommentMessage;
 use App\Repository\ConferenceRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -44,7 +43,7 @@ class ConferenceController extends AbstractController
     /**
      * @Route("/conference/{slug}", name="conference")
      */
-    public function show(Request $request, Conference $conference, CommentRepository $commentRepository, ConferenceRepository $conferenceRepository, SpamChecker $spamChecker, string $photoDir): Response
+    public function show(Request $request, Conference $conference, CommentRepository $commentRepository, ConferenceRepository $conferenceRepository, string $photoDir): Response
     {
         $comment = new Comment();
         $form = $this->createForm(CommentFormType::class, $comment);
@@ -62,7 +61,7 @@ class ConferenceController extends AbstractController
             }
             
             $this->entityManager->persist($comment);
-            $this-->$this->entityManager->flush();
+            $this->entityManager->flush();
             
             $context = [
                 'user_ip' => $request->getClientIp(),
